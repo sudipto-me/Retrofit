@@ -9,7 +9,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/tv_flower_image"
         android:text="photo"
-        android:padding="16dp"/>
+        android:padding="16dp"
+        android:layout_alignParentStart="true" />
+
+
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -17,13 +20,14 @@
         android:layout_toRightOf="@+id/tv_flower_image"
         android:orientation="vertical"
         android:padding="16dp"
-        >
+        android:id="@+id/linearLayout">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tv_flower_name"
-            android:text="name"/>
+            android:text="name"
+            />
 
         <TextView
             android:layout_width="match_parent"
@@ -31,9 +35,11 @@
             android:id="@+id/tv_flower_price"
             android:text="price"
             />
-
-
     </LinearLayout>
+
+
+
+
 
 
 

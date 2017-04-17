@@ -38,12 +38,14 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<List<Flower>> call, Response<List<Flower>> response) {
 
+                    List<Flower> flowerList = response.body();
+
 
                     linearLayoutManager = new LinearLayoutManager(MainActivity.this);
                     RecyclerView recyclerView = (RecyclerView)findViewById(R.id.rv_flower_cart);
                     recyclerView.setLayoutManager(linearLayoutManager);
 
-                    List<Flower> flowerList = response.body();
+
 
                     FlowersAdapter flowersAdapter = new FlowersAdapter(flowerList);
                     recyclerView.setAdapter(flowersAdapter);

@@ -16,10 +16,10 @@ public class FlowersAdapter extends RecyclerView.Adapter<FlowersAdapter.MyViewHo
 
 
 
-    private List<Flower>flowersList;
+    private List<Flower> item;
 
     public FlowersAdapter(List<Flower>flowersList){
-        this.flowersList = flowersList;
+        this.item = flowersList;
 
     }
 
@@ -35,7 +35,7 @@ public class FlowersAdapter extends RecyclerView.Adapter<FlowersAdapter.MyViewHo
     public FlowersAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
 
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.flower_list_row, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.flower_list_row,null);
 
         MyViewHolder myViewHolder = new MyViewHolder(itemView);
 
@@ -45,9 +45,9 @@ public class FlowersAdapter extends RecyclerView.Adapter<FlowersAdapter.MyViewHo
     @Override
     public void onBindViewHolder(FlowersAdapter.MyViewHolder holder, int position) {
 
-        holder.flower_name.setText(flowersList.get(position).name);
-        holder.flower_price.setText(flowersList.get(position).price);
-        holder.flower_photo.setText(flowersList.get(position).photo);
+        holder.flower_name.setText(item.get(position).getName());
+        holder.flower_price.setText(item.get(position).getPrice());
+        holder.flower_photo.setText(item.get(position).getPrice());
 
 
 
@@ -56,7 +56,7 @@ public class FlowersAdapter extends RecyclerView.Adapter<FlowersAdapter.MyViewHo
     @Override
     public int getItemCount() {
 
-        return this.flowersList.size();
+        return item.size();
 
     }
 
